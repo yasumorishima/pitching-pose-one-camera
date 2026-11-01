@@ -1,0 +1,55 @@
+name: inputs
+
+on:
+  workflow_dispatch:
+    inputs:
+      memo:
+        description: "why this run"
+        required: true
+  push:
+    branches: [main]
+    paths:
+      - "src/fetch.py"
+      - "src/check_inputs.py"
+      - "tests/**"
+      - ".github/workflows/inputs.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: inputs
+  cancel-in-progress: false
+
+jobs:
+  inputs:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: pip install gdown==5.2.0 opencv-python-headless==4.10.0.84 ezc3d==1.7.2 numpy pytest
+      - name: Tests (gates must fail on planted defects)
+        run: python -m pytest -q tests
+      - name: List the OBP-CV MEGA backup folder (looking for other Theia-scored trials; informational)
+        run: |
+          sudo apt-get install -y -qq megatools > /dev/null
+          set +e
+          megatools ls --long "https://mega.nz/folder/fGQ1lbjZ#PQ4trkXD8HLVqmiJP1giOg" > inputs/mega_listing.txt 2> inputs/mega_listing.err
+          echo "exit=$?" >> inputs/mega_listing.err
+          head -50 inputs/mega_listing.txt; cat inputs/mega_listing.err
+      - name: Download and record hashes
+        run: python src/fetch.py
+      - name: Check inputs (frame counts, C3D segments)
+        run: python src/check_inputs.py
+      - name: Commit records
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add inputs/
+          git diff --cached --quiet && exit 0
+          git commit -m "inputs: download manifest and checks (run ${{ github.run_id }})"
+          git push
