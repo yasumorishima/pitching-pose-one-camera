@@ -2,8 +2,16 @@
 
 **How much of a pitch's mechanics can one camera measure, and from which angle should you film?**
 
-Status: **planning — no results yet.** The plan is in [`PLAN.md`](PLAN.md). Nothing has been compared with
-the reference; numbers will appear here only after the pipeline is frozen and scored once.
+Status: **in progress — no results yet.** The plan is in [`PLAN.md`](PLAN.md). Nothing has been compared
+with the reference; numbers will appear here only after the pipeline is frozen and scored once.
+
+| Step | State |
+|---|---|
+| 1. Download the eight videos and the Theia3D file, record sha256, check frame counts | done: 8 videos x 1,406 frames, 1280x720, 360 fps; Theia3D 19 segments x 1,406 frames at 360 Hz ([`inputs/`](inputs/)) |
+| 2. 2D keypoints on every camera, frames 700-1199 (rtmlib, YOLOX-m + RTMPose-m) | running on GitHub Actions |
+| Measure formulas | written with known-answer tests: a synthetic skeleton under random rotation and scale gives the set angles; 10 planted formula errors are all caught |
+| 3. Theia3D joint centres and events; 7-camera triangulation; single-camera 3D lift | next |
+| 4. Freeze every setting, then score six cameras once | after 3 |
 
 ## Idea in one paragraph
 Driveline's OpenBiomechanics Computer Vision project filmed one throw with eight synchronized 360 fps
