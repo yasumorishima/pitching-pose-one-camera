@@ -1,0 +1,47 @@
+name: detect2d
+
+on:
+  workflow_dispatch:
+    inputs:
+      memo:
+        description: "why this run"
+        required: true
+  push:
+    branches: [main]
+    paths:
+      - "src/detect2d.py"
+      - ".github/workflows/detect2d.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: detect2d
+  cancel-in-progress: false
+
+jobs:
+  detect2d:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: pip install gdown==5.2.0 opencv-python-headless==4.10.0.84 ezc3d==1.7.2 rtmlib==0.0.16 onnxruntime==1.20.1 numpy pytest
+      - name: Tests
+        run: python -m pytest -q tests
+      - name: Download (sha256 must equal the recorded manifest)
+        run: python src/fetch.py
+      - name: Detect 2D keypoints on all eight cameras
+        run: python src/detect2d.py
+      - name: Commit keypoints
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/kp2d inputs/download_manifest.json
+          git diff --cached --quiet && exit 0
+          git commit -m "kp2d: rtmlib keypoints, frames 700-1199 (run ${{ github.run_id }})"
+          git pull --rebase -q
+          git push

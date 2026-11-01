@@ -30,3 +30,11 @@ def test_segments_pass_and_missing_fails():
         gate_segments([s for s in labels if s != "r_hand_4X4"], (4, 4, len(labels) - 1, 10))
     with pytest.raises(SystemExit):
         gate_segments(labels, (4, 4, len(labels) + 1, 10))
+
+
+def test_choose_largest_then_nearest():
+    from detect2d import choose
+    import numpy as np
+    boxes = np.array([[0, 0, 10, 10], [100, 100, 200, 300]], float)
+    assert choose(boxes, None) == 1
+    assert choose(boxes, np.array([5.0, 5.0])) == 0
