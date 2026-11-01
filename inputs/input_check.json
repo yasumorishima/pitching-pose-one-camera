@@ -1,0 +1,93 @@
+{
+  "videos": {
+    "cam15": {
+      "fps_header": 360.0,
+      "frames_header": 1406,
+      "width": 1280,
+      "height": 720,
+      "frames_decoded": 1406
+    },
+    "cam16": {
+      "fps_header": 360.0,
+      "frames_header": 1406,
+      "width": 1280,
+      "height": 720,
+      "frames_decoded": 1406
+    },
+    "cam17": {
+      "fps_header": 360.0,
+      "frames_header": 1406,
+      "width": 1280,
+      "height": 720,
+      "frames_decoded": 1406
+    },
+    "cam18": {
+      "fps_header": 360.0,
+      "frames_header": 1406,
+      "width": 1280,
+      "height": 720,
+      "frames_decoded": 1406
+    },
+    "cam19": {
+      "fps_header": 360.0,
+      "frames_header": 1406,
+      "width": 1280,
+      "height": 720,
+      "frames_decoded": 1406
+    },
+    "cam20": {
+      "fps_header": 360.0,
+      "frames_header": 1406,
+      "width": 1280,
+      "height": 720,
+      "frames_decoded": 1406
+    },
+    "cam21": {
+      "fps_header": 360.0,
+      "frames_header": 1406,
+      "width": 1280,
+      "height": 720,
+      "frames_decoded": 1406
+    },
+    "cam22": {
+      "fps_header": 360.0,
+      "frames_header": 1406,
+      "width": 1280,
+      "height": 720,
+      "frames_decoded": 1406
+    }
+  },
+  "video_frames": 1406,
+  "c3d": {
+    "rotation_shape": [
+      4,
+      4,
+      19,
+      1406
+    ],
+    "rotation_rate": 360.0,
+    "segments": [
+      "worldbody_4X4",
+      "pelvis_4X4",
+      "l_thigh_4X4",
+      "l_shank_4X4",
+      "l_foot_4X4",
+      "l_toes_4X4",
+      "r_thigh_4X4",
+      "r_shank_4X4",
+      "r_foot_4X4",
+      "r_toes_4X4",
+      "torso_4X4",
+      "head_4X4",
+      "l_uarm_4X4",
+      "l_larm_4X4",
+      "l_hand_4X4",
+      "r_uarm_4X4",
+      "r_larm_4X4",
+      "r_hand_4X4",
+      "pelvis_shifted_4X4"
+    ],
+    "point_rate": 360.0,
+    "first_frame": 0
+  }
+}

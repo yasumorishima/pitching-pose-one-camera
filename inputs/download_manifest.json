@@ -1,0 +1,50 @@
+{
+  "obp_commit": "21d089e38c9c9a7bd6dc7b29aecefcad63180bdd",
+  "files": {
+    "cam15.mp4": {
+      "drive_id": "1u4-xPnQ3DCG_ocUZn-bTeieqCGm_W4Ka",
+      "bytes": 15055511,
+      "sha256": "fa7e90ac413e5fc953ab000955993475d6ee54bfae4c65960f1fab47a04b0b42"
+    },
+    "cam16.mp4": {
+      "drive_id": "1WHEr9MXDQBv0nrEB1ahEfK6Dd-ObP2JL",
+      "bytes": 18009288,
+      "sha256": "5cb5a7e33e3d080169a8743f163fda02f8ba9414b5bead586678e86ca717e844"
+    },
+    "cam17.mp4": {
+      "drive_id": "1b37Da2tNjqytG3-rRqkgawoeQJktXVsS",
+      "bytes": 13862571,
+      "sha256": "2341daf3eb71cde0ef6fdc41a66632c3c640e9b2dfa0bf33cc2ce6d2d8b72143"
+    },
+    "cam18.mp4": {
+      "drive_id": "1Err5ZMBa_M5npiO437LuLV4HFjE3b-_U",
+      "bytes": 13608681,
+      "sha256": "b9e30c63b10c7c066970b01f3564d29faf26a60fcb6e0d8a49347fec61437b7c"
+    },
+    "cam19.mp4": {
+      "drive_id": "1sa2wrKhEHXsEvM59PQdixIDVa_e5QEDI",
+      "bytes": 19679753,
+      "sha256": "fcf893ea4883ebeae1f99e9abf1470e8ace27dd22f1f820f34b2b7cd44488ac4"
+    },
+    "cam20.mp4": {
+      "drive_id": "1xJDj0xlDX7FHfqPYkfBK3hiJnWhPWsLO",
+      "bytes": 15341265,
+      "sha256": "71ceff9056cd39d7f3d727b7696ed8bab5d4c7e084ada94d5f46a3614e58cead"
+    },
+    "cam21.mp4": {
+      "drive_id": "1vwbuVrvkbo_wFLTEEYFm2mWRH3RshiWV",
+      "bytes": 19850625,
+      "sha256": "1bbf95eb85758f2d065649c93e08f7b0cd8e8e0829ac9117c7197cb44b64ded7"
+    },
+    "cam22.mp4": {
+      "drive_id": "1nE1uRyTCxTriwIQMYXC9DjXI5xKRpOuZ",
+      "bytes": 17068958,
+      "sha256": "51f30dea8506a4613cf278a4bd84542c65714ffbcc869a6ec949b2e6eaca8736"
+    },
+    "theia.c3d": {
+      "drive_id": "1EgP-OVVpp5wv2pgorCV8Qs4-vcXZ_NjX",
+      "bytes": 1820160,
+      "sha256": "6b9edc5c2195ae717f9aa18a1a34476ca70fa3f2f46860192c0a4eb9440eca72"
+    }
+  }
+}
