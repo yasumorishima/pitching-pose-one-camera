@@ -1,0 +1,59 @@
+{
+  "first_frame": 700,
+  "last_frame": 1199,
+  "model": "rtmlib Body balanced",
+  "cameras": {
+    "cam15": {
+      "frames": 500,
+      "no_box": 0,
+      "multi_box": 0,
+      "median_score": 0.6990655660629272
+    },
+    "cam16": {
+      "frames": 500,
+      "no_box": 0,
+      "multi_box": 2,
+      "median_score": 0.6915755271911621
+    },
+    "cam17": {
+      "frames": 500,
+      "no_box": 0,
+      "multi_box": 0,
+      "median_score": 0.6845473051071167
+    },
+    "cam18": {
+      "frames": 500,
+      "no_box": 0,
+      "multi_box": 0,
+      "median_score": 0.7615020871162415
+    },
+    "cam19": {
+      "frames": 500,
+      "no_box": 0,
+      "multi_box": 500,
+      "median_score": 0.71539306640625
+    },
+    "cam20": {
+      "frames": 500,
+      "no_box": 0,
+      "multi_box": 0,
+      "median_score": 0.72022944688797
+    },
+    "cam21": {
+      "frames": 500,
+      "no_box": 0,
+      "multi_box": 0,
+      "median_score": 0.668505072593689
+    },
+    "cam22": {
+      "frames": 500,
+      "no_box": 0,
+      "multi_box": 0,
+      "median_score": 0.7379612922668457
+    }
+  },
+  "weights": {
+    "rtmpose-m_simcc-body7_pt-body7_420e-256x192-e48f03d0_20230504.onnx": "5c0a4bf67953e6d2ac43ce15e77dc9d5d354ae18430a47d2c5963a7bc5683e3c",
+    "yolox_m_8xb8-300e_humanart-c2c7a14a.onnx": "3dea6513388889f0fff4b77bf7a26013600321b9eb9ceb0e9a400a82572f5f23"
+  }
+}
