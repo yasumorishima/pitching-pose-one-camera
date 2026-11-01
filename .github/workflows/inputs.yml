@@ -36,6 +36,7 @@ jobs:
         run: python -m pytest -q tests
       - name: List the OBP-CV MEGA backup folder (looking for other Theia-scored trials; informational)
         run: |
+          mkdir -p inputs
           sudo apt-get install -y -qq megatools > /dev/null
           set +e
           megatools ls --long "https://mega.nz/folder/fGQ1lbjZ#PQ4trkXD8HLVqmiJP1giOg" > inputs/mega_listing.txt 2> inputs/mega_listing.err
