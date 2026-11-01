@@ -40,8 +40,8 @@ A3D) and measures are in `PLAN.md`.
 4. **Look at images before handing anything over** (`tools/overlay.py`); give numbers with every figure.
 5. Licence: data CC BY-NC-SA 4.0 + **no use at all by employees/contractors of professional sports
    organizations**. Never commit videos, the C3D or model weights (weights come from research-only datasets).
-   Numbers and figures derived from the data are CC BY-NC-SA 4.0; code MIT. Never write a team's or company's
-   name in this repo.
+   Numbers and figures derived from the data are CC BY-NC-SA 4.0; code MIT. Never name the club whose job
+   posting the owner uses as a yardstick (the data source credit to Driveline is required and fine).
 6. One throw, one athlete: never write population claims or "phone" claims.
 
 ## Next tasks (in order)
