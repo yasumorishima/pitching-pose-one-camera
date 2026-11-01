@@ -23,6 +23,15 @@ The owner starts a cloud session (environment 「クラウド許可1」, full ne
   also sees a seated person in the background in every frame and the rule picked the pitcher (looked at
   overlays of camera 19 index 700 and 950 and camera 17 index 950). `src/measures.py` + 24 known-answer tests;
   `tools/mutate_measures.sh` plants 10 formula defects, all caught.
+- 2026-11-01 (cloud): `python src/fetch.py` works in cloud — 8 videos + C3D (134,296,812 B) in 25 s, all 9 sha256
+  equal to `inputs/download_manifest.json`; `work/` deleted afterwards.
+
+## Cloud reachability (measured 2026-11-01, cloud session)
+| Check | Result | Proof |
+|---|---|---|
+| `python -m pip install gdown==5.2.0`; `python src/fetch.py --manifest /tmp/manifest_cloud.json` (Google Drive) | exit 0, 25 s | 9 files, 134,296,812 B |
+| Compare sha256 + bytes of `/tmp/manifest_cloud.json` with `inputs/download_manifest.json` | **9 / 9 equal** | cam15–cam22 `.mp4` + `theia.c3d` |
+Note: plain `pip` may install into another interpreter; use `python -m pip`.
 
 ## What this is
 How much of a pitch's mechanics can **one** camera measure, and from which angle? Each of eight synchronized
@@ -69,7 +78,7 @@ A3D) and measures are in `PLAN.md`.
 ## How to run
 - In cloud: `pip install gdown==5.2.0 opencv-python-headless==4.10.0.84 ezc3d==1.7.2 rtmlib==0.0.16
   onnxruntime==1.20.1 numpy pytest`, then `python src/fetch.py` (videos into `work/`, sha256 must match the
-  manifest), `python -m pytest -q tests`, `bash tools/mutate_measures.sh`, `python src/detect2d.py --cameras 17`.
+  manifest; works in cloud, measured 2026-11-01), `python -m pytest -q tests`, `bash tools/mutate_measures.sh`, `python src/detect2d.py --cameras 17`.
 - On GitHub Actions: `inputs.yml` and `detect2d.yml` run on push to `main` of their own files; results are
   committed back by the bot (pull before pushing).
 - Not available: the OBP-CV MEGA backup listing (`megatools ls` asks for a login), so other Theia-scored
